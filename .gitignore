@@ -44,3 +44,6 @@ dataset/
 
 # configs
 configs.json
+
+# training data
+data/
