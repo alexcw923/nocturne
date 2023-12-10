@@ -9,8 +9,8 @@ experiment: intersection
 env: my_custom_multi_env_v1 # name of the env, hardcoded for now
 
 # WANDB things
-wandb: False
-wandb_project: nocturne4
+wandb: True
+wandb_name: nocturne4
 wandb_id: null
 wandb_group: ${experiment}
 
@@ -36,7 +36,7 @@ steering_discretization: 21
 head_angle_lower_bound: -1.6
 head_angle_upper_bound: 1.6
 head_angle_discretization: 5
-max_num_vehicles: 20 # we want to upper bound how many agents there can be in the scene
+max_num_vehicles: 5 # we want to upper bound how many agents there can be in the scene
                      # this is mostly useful because RL libraries expect it
 # TODO(eugenevinitsky) actually implement this
 randomize_goals: False
@@ -114,7 +114,7 @@ hydra:
     subdir: ${hydra.job.num}
   launcher:
     timeout_min: 2880
-    cpus_per_task: 10
+    cpus_per_task: 16
     gpus_per_node: 1
     tasks_per_node: 1
     mem_gb: 160
